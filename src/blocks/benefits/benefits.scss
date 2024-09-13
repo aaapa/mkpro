@@ -1,0 +1,124 @@
+.benefits {
+  width: 100%;
+  padding: 90px $padding 0px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  & * {
+    z-index: 2;
+  }
+
+  &::before {
+    content: "";
+    width: 350px;
+    height: 362px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 2;
+    display: inline-block;
+    background: url("imgs/decor/decor--1.svg") center / cover no-repeat;
+  }
+
+  &::after {
+    content: "";
+    width: 350px;
+    height: 362px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+    display: inline-block;
+    background: url("imgs/decor/decor--2.svg") center / cover no-repeat;
+  }
+
+  &__body {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    align-items: start;
+    justify-content: space-between;
+
+    &::before {
+      content: "";
+      width: 485px;
+      height: 325px;
+      display: inline-block;
+      border-radius: 0px 75px;
+      background: url("imgs/benefits/benefits--1.webp") center / cover no-repeat;
+    }
+  }
+
+  &__counters {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+
+    &-top {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    &-cards {
+      width: 100%;
+      display: flex;
+    }
+
+    &-card {
+      width: 100%;
+      max-width: 200px;
+      min-height: 145px;
+      padding: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid #C4C4C4;
+
+      &-title {
+        color: $accentColor;
+      }
+
+      &-text {
+        max-width: 100px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__desc {
+    max-width: 665px;
+    font-size: clamp(1rem, 5vw, 1.125rem);
+  }
+
+  @media (max-width: 768px) {
+    & {
+      padding: 50px $padding 0px;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &__content {
+      flex-direction: column;
+
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}

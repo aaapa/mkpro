@@ -1,0 +1,34 @@
+section.works
+  .works__body.container
+    .works__content
+      .works__content-main
+        h2.title.normal.decor Наше производство
+        .works__desc  
+          p Наша фабрика гордится тем, что производит высококачественные двери с использованием современных технологий и материалов.
+          p Предлагаем широкий ассортимент, который включает 17 моделей, каждая из которых отличается стильным дизайном и надежностью.
+          p Мы гордимся тем, что наша продукция подходит для любого интерьера — от классического до современного.
+        a.works__button.button(href="#!", data-da=".works__content, 768, last") Каталог дверей
+      .works__images
+        img.works__image(src="imgs/works/works--1.webp", alt="")
+        img.works__image(src="imgs/works/works--2.webp", alt="")
+        img.works__image(src="imgs/works/works--3.webp", alt="")
+        img.works__image(src="imgs/works/works--4.webp", alt="")
+    .works__slider
+      h2.title.normal.decor Наши работы
+      .works__slider-content
+        .works__slider-slides
+          .works__slider-slide
+            img.works__slider-image(src="imgs/works/works__slider-image--1.webp", alt="")
+          .works__slider-slide
+            img.works__slider-image(src="imgs/works/works__slider-image--2.webp", alt="")
+          .works__slider-slide
+            img.works__slider-image(src="imgs/works/works--3.webp", alt="")
+          .works__slider-slide
+            img.works__slider-image(src="imgs/works/works--4.webp", alt="")
+        menu.works__slider-menu
+          li
+            button.works__slider-button.prev(type="button", data-tippy-content="Предыдущие изображения")
+              span.icon-arrow-left
+          li
+            button.works__slider-button.next(type="button", data-tippy-content="Следующие изображения")
+              span.icon-arrow-right

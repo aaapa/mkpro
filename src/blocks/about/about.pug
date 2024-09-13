@@ -1,0 +1,32 @@
+section.about
+  .about__body.container
+    h2.title.normal.decor О фабрике
+    .about__content
+      .about__desc.desc--1
+        span.about__desc-text 
+          | Компания "Дверецы" занимает позицию одного из 
+          | лидеров в производстве первоклассных дверей, предназначенных
+          | для самых разных целей, начиная от
+          | домашнего использования и заканчивая промышленными нуждами.
+          | Мы с радостью предлагаем широкий выбор
+          | продукции, который соответствует самым высоким стандартам
+          | качества и безопасности.
+        img.about__desc-image(src="imgs/about/about--1.webp", alt="")
+      .about__desc
+        img.about__desc-image(src="imgs/about/about--2.webp", alt="")
+        span.about__desc-text(data-da=".about__desc.desc--1, 768, 1") 
+          | В нашей команде трудятся опытные профессионалы,
+          | обладающие глубокими знаниями и многолетним стажем
+          | в этой сфере; каждый из них
+          | вносит свой особый вклад в достижение
+          | общих целей компании.
+      .about__slider
+        .about__slider-content
+          .about__slider-slides
+          menu.about__slider-menu
+            li
+              button.about__slider-button.prev(type="button", data-tippy-content="Предыдущие изображения")
+                span.icon-arrow-left
+            li
+              button.about__slider-button.next(type="button", data-tippy-content="Следующие изображения")
+                span.icon-arrow-right

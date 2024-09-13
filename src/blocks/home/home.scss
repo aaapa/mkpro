@@ -97,7 +97,22 @@
       border-radius: 50%;
       object-fit: cover;
       position: relative;
-      left: 10px;
+
+      &:nth-child(1) {
+        left: 0px;
+      }
+
+      &:nth-child(2) {
+        left: -10px;
+      }
+
+      &:nth-child(3) {
+        left: -20px;
+      }
+
+      &:nth-child(4) {
+        left: -30px;
+      }
     }
 
     &-info {
@@ -120,11 +135,17 @@
 
   @media (max-width: 768px) {
     &__body {
+      position: static;
       flex-direction: column;
     }
 
     &__desc {
       margin: 16px 0px 25px 0px;
+    }
+
+    &__clients {
+      position: absolute;
+      bottom: 30px;
     }
   }
 }

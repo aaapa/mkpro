@@ -1,0 +1,28 @@
+mixin footerLink(href, text)
+  li
+    a.footer__link(href=href) #{text}
+
+footer.footer
+  .footer__body.container
+    .footer__top
+      a.footer__logo(href="index.html")
+        img.footer__logo-image(src="imgs/logo/logo--black.webp", alt="")
+      .footer__section
+        h6.footer__title Разделы
+        nav.footer__nav
+          ul.footer__list
+            +footerLink("#!", "О фабрике")
+            +footerLink("#!", "Каталог")
+            +footerLink("#!", "Контакты")
+      .footer__section
+        h6.footer__title Контакты
+        span г. Финикс ул. Колонцова, дом 5, офис 535
+        a.footer__link(href="tel:+71234567890") +7 (123) 456-78-90
+        include ../../blocks/socials/socials.pug
+        +socials([
+          { name: "WhatsApp", href: "#!", icon: "whatsapp" },
+          { name: "Telegram", href: "#!", icon: "telegram" }
+        ])
+    .footer__bottom
+      .footer__copyright
+        span ©2024. Все права защищены

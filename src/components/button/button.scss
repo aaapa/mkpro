@@ -1,0 +1,33 @@
+.button {
+  color: white;
+  padding: 14px 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  font-family: "Gilroy-Semibold";
+  background-color: transparent;
+  background-color: $accentColor;
+
+  @media (hover:hover) {
+    &:hover {
+      cursor: pointer;
+      background-color: #C48139;
+    }
+  }
+
+  &:active {
+    @include scale;
+  }
+
+  &.dark {
+    background-color: #293041;
+
+    @media (hover:hover) {
+      &:hover {
+        background-color: #1C1E22;
+      }
+    }
+  }
+}

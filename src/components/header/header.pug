@@ -37,8 +37,8 @@ header.header.index
             +menuItem("#!", "Наши работы")
             +menuItem("#!", "Контакты")
         .header__bottom
-          .header__socials
-            nav.header__socials-nav
-              ul.header__socials-list
-                +socialLink("#!", "icon-whatsapp", "WhatsApp")
-                +socialLink("#!", "icon-telegram", "Telegram")
+          include ../../blocks/socials/socials.pug
+          +socials([
+            { name: "WhatsApp", href: "#!", icon: "whatsapp" },
+            { name: "Telegram", href: "#!", icon: "telegram" }
+          ])

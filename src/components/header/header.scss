@@ -8,10 +8,16 @@
   top: 0px;
   left: 0px;
   z-index: 10;
+  border-bottom: 1px solid transparent;
   background-color: rgba(0, 0, 0, 0.77);
 
   &.index {
     background-color: transparent;
+  }
+
+  &.scroll {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-color: rgb(255 255 255 / 30%);
   }
 
   &__body {
@@ -72,7 +78,7 @@
 
     &-content {
       width: 100%;
-      min-height: 100dvh;
+      height: 100%;
       padding: 30px;
       display: flex;
       gap: 80px;
@@ -289,44 +295,11 @@
     justify-content: space-between;
   }
 
-  &__socials {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-    &-nav {
-      display: flex;
-      align-items: center;
-    }
-
-    &-list {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    &-link {
-      color: $accentColor;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      font-size: 1.7rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      background-color: rgba($accentColor, 0.13);
-
-      @media (hover:hover) {
-        &:hover {
-          color: #FEEFE0;
-          background-color: $accentColor;
-        }
-      }
-    }
-  }
-
   @media (max-width: 768px) {
+    &__menu-title {
+      display: none;
+    }
+
     &__bottom {
       flex-direction: column;
       justify-content: center;

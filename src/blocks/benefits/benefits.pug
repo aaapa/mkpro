@@ -1,0 +1,20 @@
+mixin benefitCard(title, text)
+  .benefits__counters-card
+    h6.benefits__counters-card-title.title #{title}
+    p.benefits__counters-card-text #{text}
+
+section.benefits
+  .benefits__body.container
+    h2.title.normal.decor Почему мы
+    .benefits__content
+      .benefits__counters
+        .benefits__counters-top
+          +benefitCard("900+", "дверей изготовлено")
+          +benefitCard("350+", "постоянных клиентов")
+          +benefitCard("30", "опытных специалистов")
+        span.benefits__desc
+          | Наша компания "Дверецы" является ведущим производителем высококачественных дверец
+          | для различных нужд, от бытовых до промышленных.
+          | Мы гордимся тем, что предлагаем широкий ассортимент продукции,
+          | отвечающей самым строгим стандартам качества
+          | и безопасности
