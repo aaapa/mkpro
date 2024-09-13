@@ -1,0 +1,343 @@
+.header {
+  width: 100%;
+  color: white;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.77);
+
+  &.index {
+    background-color: transparent;
+  }
+
+  &__body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+
+    @media (hover:hover) {
+      &:hover {
+        @include opacity;
+      }
+    }
+
+    &:active {
+      @include scale;
+    }
+
+    &-image {
+      object-fit: cover;
+    }
+  }
+
+  @keyframes logo-animation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+
+.logo-animation {
+  animation: logo-animation 0.7s ease-in-out;
+}
+
+  &__menu {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+
+    &-top {
+      display: flex;
+      align-items: center;
+    }
+
+    &-title {
+      color: black;
+      font-size: 1.125rem;
+      font-family: "Gilroy-Medium";
+    }
+
+    &-content {
+      width: 100%;
+      min-height: 100dvh;
+      padding: 30px;
+      display: flex;
+      gap: 80px;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      position: fixed;
+      top: 0px;
+      left: -200%;
+      overflow: auto;
+      background-color: white;
+      transition: all 250ms ease-in-out;
+
+      & * {
+        z-index: 2;
+      }
+
+      &::before {
+        content: "MKПРО";
+        color: #F8F8F8;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        font-family: "Gilroy-Semibold";
+        font-size: clamp(4rem, 10vw, 15rem);
+      }
+    }
+
+    &-button {
+      min-width: 45px;
+      min-height: 45px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: transparent;
+
+      @media (hover:hover) {
+        &:hover {
+          cursor: pointer;
+          @include opacity;
+        }
+      }
+
+      &:active {
+        @include scale;
+      }
+    }
+
+    &-icon {
+      width: 45px;
+      height: 45px;
+      position: relative;
+      display: inline-block;
+      background: url("imgs/header/header__menu-icon.svg") center / cover no-repeat;
+
+      &.open {
+        background: transparent;
+
+        &::before,
+        &::after {
+          content: "";
+          width: 100%;
+          height: 3px;
+          position: absolute;
+          left: 0px;
+          display: inline-block;
+          background-color: black;
+        }
+
+        &::before {
+          rotate: -45deg;
+          top: 21px;
+        }
+
+        &::after {
+          bottom: 21px;
+          rotate: 45deg;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+
+    &-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__link {
+    color: black;
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1.5625rem, 5vw, 2.8125rem);
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 1px;
+      opacity: 0;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      display: inline-block;
+      background-color: currentColor;
+      transform-origin: center left;
+      transition: transform 250ms, opacity 250ms;
+      transform: translateY(3px) scaleY(0);
+    }
+
+    @media (hover:hover) {
+      &:hover {
+        color: $accentColor;
+
+        &::before {
+          opacity: 1;
+          transform: translateY(1px) scaleY(1);
+        }
+      }
+    }
+
+    &:active {
+      @include scale;
+    }
+
+    &.normal {
+      color: white;
+      font-size: 1.125rem;
+    }
+  }
+
+  &__address {
+    display: flex;
+    gap: 59px;
+    align-items: center;
+
+    &-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      &.open * {
+        color: black;
+        font-size: clamp(1.1rem, 5vw, 1.375rem);
+      }
+
+      &.open {
+        .header__address-icon {
+          display: none;
+        }
+      }
+      
+      &.phone.open {
+        .header__address-title {
+          text-align: right;
+        }
+      }
+    }
+
+    &-icon {
+      font-size: 2rem;
+    }
+
+    &-column {
+      display: flex;
+      gap: 5px;
+      flex-direction: column;
+    }
+
+    &-title {
+      font-family: "Gilroy-Medium";
+
+      &-mark {
+        font-family: "Gilroy-Regular";
+      }
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__socials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &-nav {
+      display: flex;
+      align-items: center;
+    }
+
+    &-list {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    &-link {
+      color: $accentColor;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background-color: rgba($accentColor, 0.13);
+
+      @media (hover:hover) {
+        &:hover {
+          color: #FEEFE0;
+          background-color: $accentColor;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__bottom {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__address-row {
+      text-align: center;
+    }
+
+    &__address-row.phone.open .header__address-title {
+      text-align: center;
+    }
+  }
+}

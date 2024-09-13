@@ -1,0 +1,44 @@
+mixin menuItem(href, text)
+  li.header__list-item
+    a.header__link(href=href) #{text}
+
+mixin socialLink(href, iconClass, title)
+  li
+    a.header__socials-link(href=href, data-tippy-content=title)
+      span(class=iconClass)
+
+header.header
+  .header__body.container
+    a.header__logo(href="index.html")
+      img.header__logo-image(src="imgs/logo/logo.webp", alt="mkpro")
+    .header__menu
+      .header__address
+        .header__address-row.gps
+          span.header__address-icon.icon-gps
+          .header__address-column
+            h6.header__address-title Адрес: 
+              span.header__address-title-mark г. Финикс
+            span ул. Колонцова, дом 5, офис 535
+        .header__address-row.phone
+          span.header__address-icon.icon-phone
+          .header__address-column
+            h6.header__address-title Телефон: 
+            a.header__link.normal(href="tel:+71234567890") +7 (123) 456-78-90
+      button.header__menu-button(type="button", aria-expanded="false", aria-label="Нажмите, чтобы открыть навигационное меню")
+        span.header__menu-icon
+      .header__menu-content
+        .header__menu-top 
+          h2.header__menu-title Меню
+        nav.header__nav
+          ul.header__list
+            +menuItem("#!", "Главная")
+            +menuItem("#!", "Каталог")
+            +menuItem("#!", "О фабрике")
+            +menuItem("#!", "Наши работы")
+            +menuItem("#!", "Контакты")
+        .header__bottom
+          .header__socials
+            nav.header__socials-nav
+              ul.header__socials-list
+                +socialLink("#!", "icon-whatsapp", "WhatsApp")
+                +socialLink("#!", "icon-telegram", "Telegram")

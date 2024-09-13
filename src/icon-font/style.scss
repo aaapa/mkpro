@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?unt9ac');
+  src:  url('fonts/icomoon.eot?unt9ac#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?unt9ac') format('truetype'),
+    url('fonts/icomoon.woff?unt9ac') format('woff'),
+    url('fonts/icomoon.svg?unt9ac#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gps:before {
+  content: "\e900";
+}
+.icon-phone:before {
+  content: "\e901";
+}
+.icon-vk:before {
+  content: "\e902";
+}
+.icon-email:before {
+  content: "\e903";
+}
+.icon-arrow-left:before {
+  content: "\e904";
+}
+.icon-arrow-right:before {
+  content: "\e905";
+}
+.icon-telegram:before {
+  content: "\e906";
+}
+.icon-whatsapp:before {
+  content: "\e907";
+}
