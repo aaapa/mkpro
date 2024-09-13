@@ -1,0 +1,13 @@
+.title {
+  color: black;
+  font-family: "Gilroy-Medium";
+  font-size: clamp(2.1875rem, 5vw, 3.75rem);
+
+  &.small {
+    font-size: 2.1875rem;
+  }
+
+  &.white {
+    color: white;
+  }
+}

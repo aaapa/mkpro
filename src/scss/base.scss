@@ -1,7 +1,10 @@
 @import url("../icon-font/style.scss");
 
 @import "../components/header/header.scss";
+@import "../components/title/title.scss";
 @import "../components/footer/footer.scss";
+
+@import "../blocks/home/home.scss";
 
 *,*::before,*::after {
   margin: unset;
