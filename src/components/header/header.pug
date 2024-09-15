@@ -10,7 +10,8 @@ mixin socialLink(href, iconClass, title)
 header.header.index
   .header__body.container
     a.header__logo(href="index.html")
-      img.header__logo-image(src="imgs/logo/logo.webp", alt="mkpro")
+      img.header__logo-image.default(src="imgs/logo/logo.svg", alt="mkpro")
+      img.header__logo-image.open(src="imgs/logo/logo--black.svg", alt="mkpro")
     .header__menu
       .header__address
         .header__address-row.gps
@@ -31,11 +32,11 @@ header.header.index
           h2.header__menu-title Меню
         nav.header__nav
           ul.header__list
-            +menuItem("#!", "Главная")
-            +menuItem("#!", "Каталог")
-            +menuItem("#!", "О фабрике")
-            +menuItem("#!", "Наши работы")
-            +menuItem("#!", "Контакты")
+            +menuItem("index.html", "Главная")
+            +menuItem("catalog.html", "Каталог")
+            +menuItem("index.html#about", "О фабрике")
+            +menuItem("index.html#works", "Наши работы")
+            +menuItem("contacts.html", "Контакты")
         .header__bottom
           include ../../blocks/socials/socials.pug
           +socials([

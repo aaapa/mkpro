@@ -1,8 +1,5 @@
 import "./src/scss/base.scss";
 
-import "simplebar";
-import "simplebar/dist/simplebar.css";
-
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
 
@@ -15,7 +12,8 @@ import "./src/components/header/header.js";
 
 import "./src/blocks/works/works.js";
 import "./src/blocks/about/about.js";
-
+import "./src/blocks/catalog/catalog.js";
+import "./src/blocks/feedback/feedback.js";
 
 const updateWrapperPadding = () => {
   if (document.querySelector(".header")) {
@@ -37,4 +35,5 @@ const updateWrapperPadding = () => {
     }
   };
 };
+
 updateWrapperPadding();

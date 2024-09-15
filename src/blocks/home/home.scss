@@ -2,6 +2,7 @@
   width: 100%;
   color: white;
   padding: $padding;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,6 +135,10 @@
   }
 
   @media (max-width: 768px) {
+    & {
+      min-height: 675px !important;
+    }
+
     &__body {
       position: static;
       flex-direction: column;

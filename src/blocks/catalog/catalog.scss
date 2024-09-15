@@ -1,0 +1,350 @@
+.catalog {
+  width: 100%;
+  padding: 50px $padding;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+
+  &__body {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  &__list {
+    width: 100%;
+    max-width: 1050px;
+    display: grid;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  &__card {
+    width: 100%;
+    padding: 30px 20px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    background-color: #F6F8FA;
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.22);
+
+    @media (hover:hover) {
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:hover &-image {
+        scale: 1.1;
+      }
+    }
+
+    &:active {
+      @include scale;
+    }
+
+    &-top {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &-image {
+      width: 140px;
+      height: 235px;
+      object-fit: cover;
+    }
+
+    @media (hover:hover) {
+      &:hover {
+        &-image {
+          scale: 1.1;
+        }
+      }
+    }
+
+    &-title {
+      color: black;
+      font-size: 1.875rem;
+      font-family: "Gilroy-Medium";
+    }
+
+    &-info {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
+
+    &-property {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+
+      &-name {
+        max-width: 150px;
+      }
+
+      &-value {
+        font-family: "Gilroy-Medium";
+      }
+    }
+
+    &-colors {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    &-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: inline-block;
+      border: 1px solid #9D9D9D;;
+
+      &.white {
+        background-color: white;
+      }
+
+      &.default {
+        background-color: #D9D9D9;
+      }
+    }
+  }
+
+  &__popup {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    padding: $padding;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 20;
+    display: block;
+    background-color: #F6F8FA;
+
+    &-body {
+      width: 100%;
+      margin-top: 100px !important;
+      margin-bottom: 100px !important;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+    }
+
+    &-title {
+      color: black;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    &-close-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: transparent;
+
+      @media (hover:hover) {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      &:active {
+        @include scale;
+      }
+    }
+
+    &-close-icon {
+      min-width: 35px;
+      min-height: 35px;
+      position: relative;
+      display: inline-block;
+
+      &::before,
+      &::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        left: 0px;
+        display: inline-block;
+        background-color: black;
+      }
+
+      &::before {
+        top: 15px;
+        rotate: 45deg;
+      }
+
+      &::after {
+        bottom: 18px;
+        rotate: -45deg;
+      }
+    }
+
+    @media (hover:hover) {
+      &-close-button:hover {
+        .catalog__popup-close-icon {
+          &::before,
+          &::after {
+            background-color: $accentColor;
+          }
+        }
+      }
+    }
+
+    &-main {
+      width: 100%;
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      align-items: start;
+      justify-content: center;
+    }
+
+    &-preview {
+      display: flex;
+      gap: 10px;
+      align-items: start;
+    }
+
+    &-image {
+      width: 210px;
+      height: 420px;
+      object-fit: cover;
+    }
+
+    &-colors {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+    }
+
+    &-color {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-block;
+      border: 1px solid transparent;
+
+      &.white {
+        background-color: white;
+      }
+
+      &.default {
+        background-color: #D9D9D9;
+      }
+
+      &.active {
+        border-color: $accentColor;
+      }
+
+      @media (hover:hover) {
+        &:not(.active):hover {
+          cursor: pointer;
+          border-color: #9D9D9D;
+        }
+      }
+
+      &:not(.active):active {
+        @include scale;
+      }
+    }
+
+    &-content {
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+
+      &-main {
+        width: 100%;
+      }
+    }
+
+    &-info {
+      width: 100%;
+      margin: 40px 0px 25px 0px;
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      font-size: 1.25rem;
+    }
+
+    &-property {
+      width: 100%;
+      color: black;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-bottom {
+      width: 100%;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__popup {
+      background-color: #F6F8FA;
+      
+      &-body {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding: $padding;
+      }
+
+      &-preview {
+        position: relative;
+        left: 20px;
+        align-items: center;
+      }
+  
+      &-content {
+        width: 100%;
+      }
+  
+      &-main {
+        align-items: center;
+        flex-direction: column;
+      }
+  
+      &-title {
+        text-align: center;
+      }
+  
+      &-bottom {
+        width: 100%;
+        flex-direction: column;
+      }
+  
+      &-button {
+        width: 100%;
+      }
+    }
+  }
+}

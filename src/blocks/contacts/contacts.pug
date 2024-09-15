@@ -16,7 +16,8 @@ section.contacts
               h6.contacts__info-title Телефон:
               a.contacts__link(href="tel:+71234567890") +7 (123) 456-78-90
         .contacts__content-bottom
-          a.button(href="#!") Обратный звонок
+          button.contacts__button.button(type="button", data-feedback-button)
+            span Обратный звонок
           include ../socials/socials.pug
           +socials([
             { name: "WhatsApp", href: "#!", icon: "whatsapp" }

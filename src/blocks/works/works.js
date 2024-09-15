@@ -1,4 +1,21 @@
 const works = () => {
+  if (document.querySelector(".works__images") && document.querySelector(".works__button")) {
+    const images = document.querySelector(".works__images");
+    const button = document.querySelector(".works__button");
+
+    function adjustImageWidth() {
+        if (window.innerWidth <= 768) {
+            const buttonWidth = button.offsetWidth;
+            images.style.width = buttonWidth + "px";
+        } else {
+            images.style.width = "";
+        }
+    }
+
+    adjustImageWidth();
+    window.addEventListener("resize", adjustImageWidth);
+  }
+
   document.querySelector(".works__slider") && (() => {
     const sliderElement = document.querySelector(".works__slider-slides");
     const buttonPrev = document.querySelector(".works__slider-button.prev");

@@ -6,14 +6,14 @@ footer.footer
   .footer__body.container
     .footer__top
       a.footer__logo(href="index.html")
-        img.footer__logo-image(src="imgs/logo/logo--black.webp", alt="")
+        img.footer__logo-image(src="imgs/logo/logo--black.svg", alt="mkpro")
       .footer__section
         h6.footer__title Разделы
         nav.footer__nav
           ul.footer__list
-            +footerLink("#!", "О фабрике")
-            +footerLink("#!", "Каталог")
-            +footerLink("#!", "Контакты")
+            +footerLink("index.html#about", "О фабрике")
+            +footerLink("catalog.html", "Каталог")
+            +footerLink("contacts.html", "Контакты")
       .footer__section
         h6.footer__title Контакты
         span г. Финикс ул. Колонцова, дом 5, офис 535

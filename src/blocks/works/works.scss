@@ -55,14 +55,11 @@
   }
 
   &__images {
-    width: 100%;
-    max-width: 600px;
     position: relative;
-    display: flex;
+    display: grid;
     gap: 10px;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     
     &::before {
       content: "";
@@ -75,30 +72,11 @@
       display: inline-block;
       background: url("imgs/works/works__images-background.svg") center / cover no-repeat;
     }
-
-    & .works__image:nth-child(1) {
-      border-radius: 0px 55px;
-    }
-
-    & .works__image:nth-child(2) {
-      padding: 5px;
-      border-radius: 55px 0px;
-      border: 1px solid $accentColor;
-    }
-
-    & .works__image:nth-child(3) {
-      border-radius: 55px 0px;
-    }
-
-    & .works__image:nth-child(4) {
-      border-radius: 0px 55px;
-    }
   }
 
-  &-image {
-    width: 285px;
+  &__image {
+    width: 100%;
     height: 215px;
-    object-fit: cover;
   }
 
   &__slider {
@@ -175,6 +153,38 @@
   }
 
   @media (max-width: 768px) {
+    & {
+      padding-top: 50px;
+    }
+
+    &__body {
+      gap: 50px;
+    }
+
+    &__content-main {
+      &::before {
+        width: 285px;
+        height: 285px;
+      }
+    }
+
+    &__desc {
+      margin: 35px 0px 0px 0px;
+    }
+
+    &__images {
+      gap: 5px;
+      &::before {
+        width: 160px;
+        height: 130px;
+      }
+    }
+
+    &__image {
+      width: 100%;
+      height: 132px;
+    }
+
     &__button {
       width: 100%;
     }

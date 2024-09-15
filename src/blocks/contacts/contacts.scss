@@ -5,6 +5,11 @@
   flex-direction: column;
   justify-content: center;
 
+  &.page {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
   & * {
     z-index: 2;
   }
@@ -48,6 +53,10 @@
       gap: 15px;
       align-items: center;
     }
+  }
+
+  &.page &__content-main::after {
+    display: none;
   }
 
   &__info {
@@ -112,7 +121,25 @@
     }
   }
 
+  &.page &__map {
+    &::before {
+      content: "";
+      width: 300px;
+      height: 420px;
+      position: absolute;
+      right: 0px;
+      z-index: 1;
+      display: inline-block;
+      background: url("imgs/decor/decor--2.svg") center / cover no-repeat;
+    }
+  }
+
   @media (max-width: 768px) {
+    &.page {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
     &__content {
       gap: 10px;
       flex-direction: column;
@@ -128,9 +155,19 @@
       }
     }
 
+    &__button {
+      width: 100%;
+    }
+
     &__map {
       width: 100%;
       max-width: none;
+    }
+
+    &.page &__map {
+      &::before {
+        display: none;
+      }
     }
   }
 }
