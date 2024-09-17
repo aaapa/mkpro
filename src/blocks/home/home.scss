@@ -1,15 +1,12 @@
 .home {
   width: 100%;
   color: white;
-  padding: $padding;
   position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: 
-   linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
-   url("imgs/home/home__background.webp") center / cover no-repeat;
 
   & * {
     position: relative;
@@ -18,6 +15,7 @@
 
   &__body {
     width: 100%;
+    padding: $padding;
     display: flex;
     gap: 20px;
     align-items: start;
@@ -98,6 +96,7 @@
       border-radius: 50%;
       object-fit: cover;
       position: relative;
+      border: 1px solid $accentColor;
 
       &:nth-child(1) {
         left: 0px;

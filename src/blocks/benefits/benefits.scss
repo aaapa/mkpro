@@ -49,13 +49,13 @@
     align-items: start;
     justify-content: space-between;
 
-    &::before {
-      content: "";
+    &-image {
       width: 485px;
       height: 325px;
-      display: inline-block;
+      object-fit: cover;
       border-radius: 0px 75px;
-      background: url("imgs/benefits/benefits--1.webp") center / cover no-repeat;
+
+      @include hover-image;
     }
   }
 

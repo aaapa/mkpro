@@ -79,6 +79,24 @@
     height: 215px;
   }
 
+  &__images .works__image:nth-child(1) {
+    border-radius: 0px 55px;
+  }
+
+  &__images .works__image:nth-child(2) {
+    padding: 5px;
+    border-radius: 55px 0px;
+    border: 1px solid $accentColor;
+  }
+
+  &__images .works__image:nth-child(3) {
+    border-radius: 55px 0px;
+  }
+
+  &__images .works__image:nth-child(4) {
+    border-radius: 0px 55px;
+  }
+
   &__slider {
     display: flex;
     gap: 35px;
@@ -102,6 +120,7 @@
 
     &-slide {
       width: 100%;
+      overflow: hidden;
       position: absolute;
       top: 0px;
       left: 0px;
@@ -120,6 +139,24 @@
       width: 100%;
       height: 350px;
       object-fit: cover;
+      display: inline-block;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: inline-block;
+      }
+
+      @media (hover:hover) {
+        &:hover {
+          @include hover-image;
+        }
+      }
     }
 
     &-menu {

@@ -10,6 +10,7 @@ useDynamicAdapt();
 
 import "./src/components/header/header.js";
 
+import "./src/blocks/home/home.js";
 import "./src/blocks/works/works.js";
 import "./src/blocks/about/about.js";
 import "./src/blocks/catalog/catalog.js";

@@ -5,3 +5,12 @@
 @mixin scale {
   scale: $scale;
 }
+
+@mixin hover-image {
+  @media (hover:hover) {
+    &:hover {
+      border-radius: 0px;
+      scale: 1.1;
+    }
+  }
+}

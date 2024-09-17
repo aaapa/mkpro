@@ -86,19 +86,6 @@
       & * {
         z-index: 2;
       }
-
-      &::before {
-        content: "MKПРО";
-        color: #F8F8F8;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: 1;
-        transform: translate(-50%, -50%);
-        text-transform: uppercase;
-        font-family: "Gilroy-Semibold";
-        font-size: clamp(4rem, 10vw, 15rem);
-      }
     }
 
     &-button {
@@ -160,10 +147,24 @@
 
   &__nav {
     width: 100%;
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+
+    &::before {
+      content: "MKПРО";
+      color: #F8F8F8;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      text-transform: uppercase;
+      font-family: "Gilroy-Semibold";
+      font-size: clamp(4rem, 10vw, 15rem);
+    }
   }
 
   &__list {
