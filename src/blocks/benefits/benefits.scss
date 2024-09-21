@@ -44,6 +44,7 @@
 
   &__content {
     width: 100%;
+    overflow: hidden;
     display: flex;
     gap: 50px;
     align-items: start;
@@ -102,7 +103,7 @@
     font-size: clamp(1rem, 5vw, 1.125rem);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1085px) {
     & {
       padding: 50px $padding 0px;
 
@@ -113,17 +114,12 @@
     }
 
     &__content {
+      gap: 15px;
       flex-direction: column;
 
       &::before {
         width: 100%;
       }
-    }
-  }
-
-  @media (max-width: 768px) {
-    &__content {
-      gap: 15px;
     }
 
     &__counters-top {
@@ -137,6 +133,12 @@
       &-text {
         font-size: 0.875rem;
       }
+    }
+  }
+
+  @media (max-width: 785px) {
+    &__content-image {
+      width: 100%;
     }
   }
 }

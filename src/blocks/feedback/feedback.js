@@ -3,7 +3,7 @@ const feedback = () => {
     const feedbackContainer = document.createElement("div");
     feedbackContainer.classList.add("feedback");
 
-    feedbackContainer.innerHTML = `
+    feedbackContainer.insertAdjacentHTML("beforeend", `
       <div class="feedback__body container">
         <header class="feedback__header">
           <button class="feedback__close-button" type="button" aria-label="Нажмите, чтобы закрыть форму обратной связи" aria-expanded="true">
@@ -15,9 +15,9 @@ const feedback = () => {
           <div class="feedback__content-main">
             <h2 class="feedback__title title normal">Получить бесплатную консультацию и замер</h2>
             <form class="feedback__form">
-              <input class="feedback__form-input" type="text" placeholder="Ваше имя" required>
-              <input class="feedback__form-input" type="tel" placeholder="+ 7 (999) ___ __ __" inputmode="tel" required>
-              <input class="feedback__form-input" type="email" placeholder="Ваш Email" inputmode="email" required>
+              <input class="feedback__form-input" type="text" placeholder="Ваше имя" name="name" required>
+              <input class="feedback__form-input" type="tel" placeholder="+ 7 (999) ___ __ __" inputmode="tel" maxlength="11" name="phone" required>
+              <input class="feedback__form-input" type="email" placeholder="Ваш Email" inputmode="email" name="email">
               <button class="feedback__form-button button" type="submit">
                 <span>Отправить заявку</span>
               </button>
@@ -25,10 +25,9 @@ const feedback = () => {
           </div>
         </div>
       </div>
-    `;
+    `);
 
     document.body.style.overflow = "clip";
-
     document.body.appendChild(feedbackContainer);
 
     const closeButton = feedbackContainer.querySelector(".feedback__close-button");
@@ -50,10 +49,57 @@ const feedback = () => {
         document.body.style.overflow = "";
       }
     });
+
+    const form = feedbackContainer.querySelector(".feedback__form");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = form.querySelector('input[name="name"]').value.trim();
+      const phone = form.querySelector('input[name="phone"]').value.trim();
+      const email = form.querySelector('input[name="email"]').value.trim();
+
+      sendMessage(name, phone, email, form, feedbackContainer);
+    });
+  };
+
+  const sendMessage = (name, phone, email, form, feedbackContainer) => {
+    const token = "7253592823:AAGP43ivoSsN96qZ740ulOb1dr-7MN9Yy1k";
+    const chatId = "-1002436110360";
+
+    const emailText = email ? email : "не указано";
+    const message = `Имя: ${name}\nТелефон: ${phone}\nEmail: ${emailText}`;
+
+    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+    const params = {
+      chat_id: chatId,
+      text: message,
+      parse_mode: "HTML"
+    };
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(params)
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.ok) {
+        alert("Сообщение успешно отправлено!");
+        form.reset();
+        feedbackContainer.remove();
+        document.body.style.overflow = "";
+      } else {
+        alert("Ошибка при отправке сообщения: " + data.description);
+      }
+    })
+    .catch(error => console.error("Ошибка:", error));
   };
 
   document.addEventListener("click", (event) => {
-    if (event.target.matches("[data-feedback-button]")) {
+    if (event.target.closest("[data-feedback-button]")) {
       createFeedbackForm();
     }
   });

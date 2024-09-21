@@ -102,7 +102,6 @@
       @media (hover:hover) {
         &:hover {
           cursor: pointer;
-          @include opacity;
         }
       }
 
@@ -140,6 +139,15 @@
         &::after {
           bottom: 21px;
           rotate: 45deg;
+        }
+      }
+    }
+
+    @media (hover:hover) {
+      &-button:hover &-icon {
+        &::before,
+        &::after {
+          background-color: $accentColor;
         }
       }
     }

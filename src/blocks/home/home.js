@@ -5,20 +5,31 @@ const home = () => {
     const nextBackground = document.createElement("div");
 
     const backgrounds = [
-      "imgs/home/home__background.png",
-      "imgs/current-page/catalog.png",
-      "imgs/current-page/contacts.png",
+      "imgs/home/home__background--1.png",
+      "imgs/home/home__background--2.png",
+      "imgs/home/home__background--3.png",
+      "imgs/home/home__background--4.png",
+    ];
+
+    const backgroundsMobile = [
+      "imgs/home/mobile/home__background--1.png",
+      "imgs/home/mobile/home__background--2.png",
+      "imgs/home/mobile/home__background--3.png",
+      "imgs/home/mobile/home__background--4.png",
     ];
 
     let currentIndex = 0;
-
     nextBackground.className = "home__next-background";
     home.appendChild(nextBackground);
 
+    const mediaQueryList = window.matchMedia("(max-width: 768px)");
+
     const changedBackground = () => {
-      const nextIndex = (currentIndex + 1) % backgrounds.length;
+      const bgArray = mediaQueryList.matches ? backgroundsMobile : backgrounds;
+      const nextIndex = (currentIndex + 1) % bgArray.length;
+
       nextBackground.style.backgroundImage =
-        `linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(${backgrounds[nextIndex]})`;
+        `linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(${bgArray[nextIndex]})`;
 
       nextBackground.classList.add("slide-in");
       nextBackground.style.zIndex = "1";
@@ -27,7 +38,7 @@ const home = () => {
 
       setTimeout(() => {
         background.style.backgroundImage =
-          `linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(${backgrounds[currentIndex]})`;
+          `linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(${bgArray[currentIndex]})`;
         nextBackground.classList.remove("slide-in");
         nextBackground.style.transform = "translateX(100%)";
         nextBackground.style.zIndex = "-1";
@@ -35,13 +46,14 @@ const home = () => {
       }, 1000);
     };
 
+    const bgArray = mediaQueryList.matches ? backgroundsMobile : backgrounds;
     background.style.backgroundImage =
-      `linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(${backgrounds[currentIndex]})`;
+      `linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(${bgArray[currentIndex]})`;
 
-    setInterval(changedBackground, 3000);
+    setInterval(changedBackground, 5000);
     changedBackground();
 
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.innerHTML = `
       .home__background,
       .home__next-background {
@@ -51,6 +63,7 @@ const home = () => {
         width: 100%;
         height: 100%;
         background-size: cover;
+        background-repeat: no-repeat;
         transition: background-image 1s ease;
         opacity: 1;
       }
@@ -80,6 +93,9 @@ const home = () => {
     `;
     
     document.head.appendChild(style);
+
+    mediaQueryList.addEventListener("change", changedBackground);
+    
   }
 };
 

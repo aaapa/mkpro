@@ -4,12 +4,12 @@ const works = () => {
     const button = document.querySelector(".works__button");
 
     function adjustImageWidth() {
-        if (window.innerWidth <= 768) {
-            const buttonWidth = button.offsetWidth;
-            images.style.width = buttonWidth + "px";
-        } else {
-            images.style.width = "";
-        }
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        const buttonWidth = button.offsetWidth;
+        images.style.width = buttonWidth + "px";
+      } else {
+        images.style.width = "";
+      }
     }
 
     adjustImageWidth();
@@ -24,21 +24,20 @@ const works = () => {
     const totalSlides = slides.length;
 
     let currentSlideIndex = 0;
-    let slidesPerView = window.innerWidth <= 768 ? 1 : 2;
+    let slidesPerView = window.matchMedia('(max-width: 768px)').matches ? 1 : 2;
 
     const updateSlidesPerView = () => {
-      slidesPerView = window.innerWidth <= 768 ? 1 : 2;
+      slidesPerView = window.matchMedia('(max-width: 768px)').matches ? 1 : 2;
       showSlides();
     };
 
     const showSlides = () => {
       slides.forEach((slide, index) => {
-        slide.classList[index >= currentSlideIndex && index < currentSlideIndex + slidesPerView ? 'add' : 'remove']("active");
+        slide.classList.remove("active");
+        if (index >= currentSlideIndex && index < currentSlideIndex + slidesPerView) {
+          slide.classList.add("active");
+        }
       });
-      sliderElement.classList.add("transition");
-      setTimeout(() => {
-        sliderElement.classList.remove("transition");
-      }, 300);
     };
 
     const nextSlide = () => {
@@ -51,9 +50,13 @@ const works = () => {
       showSlides();
     };
 
+    setInterval(nextSlide, 5000);
+
     buttonPrev.addEventListener("click", previousSlide);
     buttonNext.addEventListener("click", nextSlide);
 
+    window.matchMedia('(max-width: 768px)').addEventListener('change', updateSlidesPerView);
+    
     updateSlidesPerView();
     window.addEventListener("resize", updateSlidesPerView);
   })();
