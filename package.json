@@ -16,6 +16,8 @@
     "vite-plugin-pug": "^0.3.2"
   },
   "dependencies": {
-    "tippy.js": "^6.3.7"
+    "aos": "^2.3.4",
+    "tippy.js": "^6.3.7",
+    "vite-plugin-sass-glob-import": "^3.0.2"
   }
 }

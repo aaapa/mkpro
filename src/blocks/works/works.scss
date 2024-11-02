@@ -77,7 +77,7 @@
   &__image {
     width: 100%;
     height: 215px;
-
+    @include transition;
     @include hover-image;
   }
 
@@ -141,6 +141,7 @@
       height: 350px;
       object-fit: cover;
       display: inline-block;
+      @include transition;
 
       @include hover-image;
 

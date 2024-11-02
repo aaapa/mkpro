@@ -13,26 +13,25 @@
                 span.contacts__info-icon.icon-gps
                 .contacts__info-column
                   h6.contacts__info-title Адрес:
-                    span.contacts__info-title-mark г. Финикс
-                  span ул. Колонцова, дом 5, офис 535
+                    span.contacts__info-title-mark 601241, Владимирская область, Собинский район, д. Демидово,
+                  span дом 4Б, корпус 2, литер А2, офис 4
               .contacts__info-row.phone
                 span.contacts__info-icon.icon-phone
                 .contacts__info-column
                   h6.contacts__info-title Телефон:
-                  a.contacts__link(href="tel:+71234567890") +7 (123) 456-78-90
+                  a.contacts__link(href="tel:+79066111333") +7 (906) 611-13-33
               .contacts__info-row
                 span.contacts__info-icon.icon-email
                 .contacts__info-column
                   h6.contacts__info-title Email:
-                  a.contacts__link(href="mailto:stroy@mail.ru") stroy@mail.ru
+                  a.contacts__link(href="mailto:mkpro33@mail.ru") mkpro33@mail.ru
             .contacts__content-bottom
               button.button(type="button", data-feedback-button)
                 span Обратный звонок
               include src/blocks/socials/socials.pug
               +socials([
-                { name: "WhatsApp", href: "#!", icon: "whatsapp" },
-                { name: "Вконтакте", href: "#!", icon: "vk" }
+                { name: "WhatsApp", href: "https://wa.me/+79066111333", icon: "whatsapp" },
               ])
           .contacts__map
-            iframe.contacts__map-iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3A7d46e372562af113357da5309d5c1b74e8ef58cf7acd6a3779a0f810b8b18a7a&source=constructor", frameborder="0")
+            iframe.contacts__map-iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a405ea9c20dee48ce1c70c2f18a378745fd2dfa4cb8f5e9e219f3e9f942d012&amp;source=constructor", frameborder="0")
   include src/components/footer/footer.pug

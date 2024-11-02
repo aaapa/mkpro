@@ -11,10 +11,16 @@ useDynamicAdapt();
 import "./src/components/header/header.js";
 
 import "./src/blocks/home/home.js";
+import "./src/blocks/benefits/benefits.js";
 import "./src/blocks/works/works.js";
 import "./src/blocks/about/about.js";
 import "./src/blocks/catalog/catalog.js";
 import "./src/blocks/feedback/feedback.js";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 const updateWrapperPadding = () => {
   if (document.querySelector(".header")) {
@@ -25,16 +31,16 @@ const updateWrapperPadding = () => {
     if (home) {
       wrapper.paddingTop = "0px";
     } else {
-        const observer = new ResizeObserver(entries => {
-          for (let entry of entries) {
-              const headerHeight = entry.target.getBoundingClientRect().height;
-              wrapper.style.paddingTop = `${headerHeight}px`;
-          }
+      const observer = new ResizeObserver((entries) => {
+        for (let entry of entries) {
+          const headerHeight = entry.target.getBoundingClientRect().height;
+          wrapper.style.paddingTop = `${headerHeight}px`;
+        }
       });
-  
+
       observer.observe(header);
     }
-  };
+  }
 };
 
 updateWrapperPadding();

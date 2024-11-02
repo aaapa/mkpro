@@ -97,6 +97,7 @@
     color: black;
     text-decoration: none;
     display: inline-block;
+    @include transition;
 
     @media (hover:hover) {
       &:hover {

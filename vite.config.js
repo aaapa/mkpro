@@ -2,12 +2,14 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import pugPlugin from "vite-plugin-pug";
 import autoprefixer from "autoprefixer";
+import sassGlobImports from "vite-plugin-sass-glob-import";
 
 export default defineConfig({
   plugins: [
     pugPlugin({
       pretty: true,
     }),
+    sassGlobImports(),
   ],
   build: {
     rollupOptions: {
@@ -15,7 +17,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         contacts: resolve(__dirname, "contacts.html"),
         catalog: resolve(__dirname, "catalog.html"),
-      },
+      }
     },
     assetsDir: "",
   },

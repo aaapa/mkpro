@@ -15,10 +15,10 @@ const feedback = () => {
           <div class="feedback__content-main">
             <h2 class="feedback__title title normal">Получить бесплатную консультацию и замер</h2>
             <form class="feedback__form">
-              <input class="feedback__form-input" type="text" placeholder="Ваше имя" name="name" required>
-              <input class="feedback__form-input" type="tel" placeholder="+ 7 (999) ___ __ __" inputmode="tel" maxlength="11" name="phone" required>
-              <input class="feedback__form-input" type="email" placeholder="Ваш Email" inputmode="email" name="email">
-              <button class="feedback__form-button button" type="submit">
+              <input class="feedback__input" type="text" placeholder="Ваше имя" name="name" required>
+              <input class="feedback__input" type="tel" placeholder="+ 7 (999) ___ __ __" inputmode="tel" maxlength="11" name="phone" required>
+              <input class="feedback__input" type="email" placeholder="Ваш Email" inputmode="email" name="email">
+              <button class="feedback__button button" type="submit">
                 <span>Отправить заявку</span>
               </button>
             </form>
@@ -27,7 +27,7 @@ const feedback = () => {
       </div>
     `);
 
-    document.body.style.overflow = "clip";
+    document.body.style.overflow = "hidden";
     document.body.appendChild(feedbackContainer);
 
     const closeButton = feedbackContainer.querySelector(".feedback__close-button");
@@ -51,6 +51,7 @@ const feedback = () => {
     });
 
     const form = feedbackContainer.querySelector(".feedback__form");
+    
     form.addEventListener("submit", (event) => {
       event.preventDefault();
 
@@ -87,15 +88,50 @@ const feedback = () => {
     .then(response => response.json())
     .then(data => {
       if (data.ok) {
-        alert("Сообщение успешно отправлено!");
+        showSuccessDialog("Ваши данные успешно отправлены! <br/> Ожидайте ответа.");
         form.reset();
         feedbackContainer.remove();
         document.body.style.overflow = "";
       } else {
-        alert("Ошибка при отправке сообщения: " + data.description);
+        showSuccessDialog("Ошибка при отправке данных.", true);
       }
     })
     .catch(error => console.error("Ошибка:", error));
+  };
+
+  const showSuccessDialog = (message, isError = false) => {
+    const dialog = document.createElement("div");
+    
+    dialog.classList.add("feedback__success");
+    
+    dialog.insertAdjacentHTML("beforeend", `
+     <div class="feedback__success-body container">
+      <header class="feedback__success-header">
+       <button class="feedback__close-button" type="button" aria-label="Закрыть окно об отправке данных" aria-expanded="true">
+        <span class="feedback__close-icon"></span>
+       </button> 
+      </header>
+      <div class="${isError ? 'feedback__success-content warning' : 'feedback__success-content'}">
+       <h2>${message}</h2>   
+      </div>
+     </div>
+    `);
+    
+    document.body.appendChild(dialog);
+    
+    document.body.style.overflow = "hidden";
+
+    dialog.querySelector(".feedback__close-button").addEventListener("click", () => {
+      dialog.remove();
+      document.body.style.overflow = "";
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        dialog.remove();
+        document.body.style.overflow = "";
+      }
+    });
   };
 
   document.addEventListener("click", (event) => {

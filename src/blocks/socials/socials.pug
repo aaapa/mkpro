@@ -4,5 +4,5 @@ mixin socials(links, additionalClass = "")
       ul.socials__list
         each link in links
           li
-            a.socials__link(href=link.href, data-tippy-content=link.name)
+            a.socials__link(href=link.href, data-tippy-content=link.name, data-aos="fade-up", data-aos-delay="100")
               span(class=`icon-${link.icon}`)

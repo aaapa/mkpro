@@ -55,6 +55,7 @@
       height: 325px;
       object-fit: cover;
       border-radius: 0px 75px;
+      transition: all 0.15s ease-out !important;
 
       @include hover-image;
     }
@@ -78,17 +79,18 @@
     &-card {
       width: 100%;
       max-width: 200px;
-      min-height: 145px;
+      min-height: 115px;
       padding: 20px;
       display: flex;
       gap: 10px;
       align-items: center;
       flex-direction: column;
       justify-content: center;
-      border: 1px solid #C4C4C4;
+      border: 1px solid #c4c4c4;
 
       &-title {
         color: $accentColor;
+        font-size: clamp(1.125rem, 5vw, 2.75rem);
       }
 
       &-text {
@@ -139,6 +141,16 @@
   @media (max-width: 785px) {
     &__content-image {
       width: 100%;
+    }
+  }
+
+  @media (max-width: 380px) {
+    &__counters-card-title {
+      font-size: 0.813rem;
+    }
+
+    &__counters-card-text {
+      font-size: 0.75rem;
     }
   }
 }

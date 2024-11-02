@@ -6,6 +6,7 @@ const home = () => {
 
     const backgrounds = [
       "imgs/home/home__background--1.png",
+      "imgs/home/home__background--5.png",
       "imgs/home/home__background--2.png",
       "imgs/home/home__background--3.png",
       "imgs/home/home__background--4.png",
@@ -13,6 +14,7 @@ const home = () => {
 
     const backgroundsMobile = [
       "imgs/home/mobile/home__background--1.png",
+      "imgs/home/mobile/home__background--5.png",
       "imgs/home/mobile/home__background--2.png",
       "imgs/home/mobile/home__background--3.png",
       "imgs/home/mobile/home__background--4.png",

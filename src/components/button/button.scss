@@ -6,9 +6,10 @@
   justify-content: center;
   text-decoration: none;
   border: none;
+  text-align: center;
   font-family: "Gilroy-Semibold";
-  background-color: transparent;
   background-color: $accentColor;
+  @include transition;
 
   @media (hover:hover) {
     &:hover {
