@@ -1,0 +1,6 @@
+mixin currentPage(imageSrc, title)
+  section.current-page
+    .current-page__body.container
+      .current-page__image-container
+        img.current-page__image(src=imageSrc, alt="")
+      h1.title.white(data-aos="zoom-in")= title

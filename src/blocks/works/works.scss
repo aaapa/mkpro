@@ -1,0 +1,249 @@
+.works {
+  width: 100%;
+  padding: 100px $padding 0px;
+  display: flex;
+  flex-direction: column;
+  
+  & * {
+    z-index: 2;
+  }
+
+  &__body {
+    width: 100%;
+    display: flex;
+    gap: 100px;
+    flex-direction: column;
+  }
+
+  &__content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-between;
+    
+
+    &-main {
+      position: relative;
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+
+      &::before {
+        content: "";
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        z-index: 1;
+        display: inline-block;
+        background: url("imgs/works/works__manufacturing.svg") center / cover no-repeat;
+      }
+    }
+  }
+
+  &__catalog-slider {
+    width: 265px;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__catalog-slider .catalog__card {
+    flex-shrink: 0;
+    box-shadow: none;
+  }
+
+  &__desc {
+    color: black;
+    max-width: 500px;
+    margin: 35px 0px 60px 0px;
+    display: flex;
+    gap: 20px;
+    align-items: start;
+    flex-direction: column;
+    font-size: clamp(1rem, 5vw, 1.25rem);
+  }
+
+  &__images {
+    position: relative;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 335px);
+    grid-template-rows: repeat(2, 1fr);
+    
+    &::before {
+      content: "";
+      width: 333px;
+      height: 268px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      display: inline-block;
+      background: url("imgs/works/works__images-background.svg") center / cover no-repeat;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 215px;
+    @include transition;
+    @include hover-image;
+  }
+
+  &__images .works__image:nth-child(1) {
+    border-radius: 0px 55px;
+  }
+
+  &__images .works__image:nth-child(2) {
+    padding: 5px;
+    border-radius: 55px 0px;
+    border: 1px solid $accentColor;
+  }
+
+  &__images .works__image:nth-child(3) {
+    border-radius: 55px 0px;
+  }
+
+  &__images .works__image:nth-child(4) {
+    border-radius: 0px 55px;
+  }
+
+  &__slider {
+    display: flex;
+    gap: 35px;
+    align-items: start;
+    flex-direction: column;
+
+    &-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-slides {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    &-slide {
+      width: 0px;
+      min-height: 350px;
+      overflow: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      transition: opacity 0.5s ease-in-out;
+
+      &.active {
+        width: 100%;
+        position: relative;
+        opacity: 1;
+      }
+    }
+
+    &-image {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: inline-block;
+      @include transition;
+
+      @include hover-image;
+
+      &.pc {
+        @media (max-width: 480px) {
+          display: none;
+        }
+      }
+
+      &.mobile {
+        display: none;
+
+        @media (max-width: 480px) {
+          display: block;
+        }
+      }
+    }
+
+    &-menu {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-button {
+      color: black;
+      padding: 10px 5px;
+      font-size: 2.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: transparent;
+
+      @media (hover:hover) {
+        &:hover {
+          cursor: pointer;
+          color: $accentColor;
+        }
+      }
+
+      &:active {
+        @include scale;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    & {
+      padding-top: 50px;
+    }
+
+    &__body {
+      gap: 50px;
+    }
+
+    &__content-main {
+      &::before {
+        width: 285px;
+        height: 285px;
+      }
+    }
+
+    &__desc {
+      margin: 35px 0px 0px 0px;
+    }
+
+    &__images {
+      gap: 5px;
+      grid-template-columns: repeat(2, 1fr);
+
+      &::before {
+        width: 160px;
+        height: 130px;
+      }
+    }
+
+    &__image {
+      width: 100%;
+    }
+
+    &__button {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__image {
+      height: 120px;
+    }
+  }
+}

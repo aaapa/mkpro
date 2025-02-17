@@ -1,0 +1,156 @@
+.home {
+  width: 100%;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  & * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__body {
+    width: 100%;
+    padding: $padding;
+    display: flex;
+    gap: 20px;
+    align-items: start;
+    justify-content: space-between;
+  }
+
+  &__content {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  &__title {
+    max-width: 650px;
+  }
+
+  &__desc {
+    max-width: 650px;
+    margin: 20px 0px 50px 0px;
+    font-size: clamp(1.125rem, 5vw, 1.5625rem);
+  }
+
+  &__link {
+    color: white;
+    min-height: 45px;
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.375rem;
+    font-family: "Gilroy-Medium";
+    @include transition;
+
+    @media (hover:hover) {
+      &:hover {
+        opacity: 0.8 !important;
+      }
+    }
+
+    &:active {
+      @include scale;
+    }
+
+    &-icon {
+      position: relative;
+      top: 5px;
+      font-size: 2.5rem;
+
+      &::after {
+        content: "";
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 0px;
+        right: -20px;
+        z-index: 1;
+        border-radius: 50%;
+        display: inline-block;
+        background-color: $accentColor;
+      }
+    }
+  }
+
+  &__clients {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    &-images {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    &-image {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+      position: relative;
+      border: 1px solid $accentColor;
+
+      &:nth-child(1) {
+        left: 0px;
+      }
+
+      &:nth-child(2) {
+        left: -10px;
+      }
+
+      &:nth-child(3) {
+        left: -20px;
+      }
+
+      &:nth-child(4) {
+        left: -30px;
+      }
+    }
+
+    &-info {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    &-counter {
+      font-size: 1.5rem;
+      font-family: "Gilroy-Semibold";
+    }
+
+    &-text {
+      line-height: 100%;
+      font-family: "Gilroy-Medium";
+    }
+  }
+
+  @media (max-width: 768px) {
+    & {
+      min-height: 675px !important;
+    }
+
+    &__body {
+      position: static;
+      flex-direction: column;
+    }
+
+    &__desc {
+      margin: 16px 0px 25px 0px;
+    }
+
+    &__clients {
+      position: absolute;
+      bottom: 30px;
+    }
+  }
+}

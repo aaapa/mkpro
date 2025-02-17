@@ -1,0 +1,42 @@
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__link {
+    color: $accentColor;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    @include transition;
+    background-color: rgba($accentColor, 0.13);
+
+    @media (hover:hover) {
+      &:hover {
+        color: #FEEFE0;
+        background-color: $accentColor;
+      }
+    }
+
+    &:active {
+      @include scale;
+    }
+  }
+}

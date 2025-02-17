@@ -1,0 +1,37 @@
+section.about#about
+  .about__body.container
+    h2.title.normal.decor(data-aos="fade-up") О фабрике
+    .about__content
+      .about__desc.desc--1
+        span.about__desc-text(data-aos="fade-up")
+          | Добро пожаловать в мир МКПро, где
+          | качество и стиль встречаются в каждой
+          | межкомнатной двери! Наша компания специализируется на
+          | производстве дверей, которые не только выполняют
+          | свою основную функцию, но и становятся
+          | важным элементом вашего интерьера. Мы гордимся
+          | тем, что наши изделия сочетают в
+          | себе современные технологии и классические традиции.
+        img.about__desc-image(src="imgs/about/about--1.png", alt="", data-aos="fade-up")
+      .about__desc
+        img.about__desc-image(src="imgs/about/about--2.png", alt="", data-aos="fade-up")
+        span.about__desc-text(data-da=".about__desc.desc--1, 768, 1", data-aos="fade-up") 
+          | В нашей команде трудятся опытные профессионалы,
+          | обладающие глубокими знаниями и многолетним стажем
+          | в этой сфере; каждый из них
+          | вносит свой особый вклад в достижение
+          | общих целей компании.
+      .about__slider
+        .about__slider-content
+          .about__slider-slides
+            .about__slider-slide
+              img.about__slider-image(src="imgs/about/about--1.png", alt="", data-aos="fade-up")
+            .about__slider-slide
+              img.about__slider-image(src="imgs/about/about--2.png", alt="", data-aos="fade-up")
+          menu.about__slider-menu
+            li(data-aos="fade-up", data-aos-delay="100")
+              button.about__slider-button.prev(type="button", data-tippy-content="Предыдущие изображения")
+                span.icon-arrow-left
+            li(data-aos="fade-up", data-aos-delay="200")
+              button.about__slider-button.next(type="button", data-tippy-content="Следующие изображения")
+                span.icon-arrow-right

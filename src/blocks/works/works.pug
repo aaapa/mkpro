@@ -1,0 +1,41 @@
+mixin worksImage(src, alt, delay = "100")
+  img.works__image(src=src, alt=alt, data-aos="fade-up", data-aos-delay=delay)
+
+section.works#works
+  .works__body.container
+    .works__content
+      .works__content-main
+        h2.title.normal.decor(data-aos="fade-up") Наше производство
+        .works__desc
+          p(data-aos="fade-up") Наша фабрика гордится тем, что производит высококачественные двери с использованием современных технологий и материалов.
+          p(data-aos="fade-up") Предлагаем широкий ассортимент, который включает модели, каждая из которых отличается стильным дизайном и надёжностью.
+          p(data-aos="fade-up") Мы гордимся тем, что наша продукция подходит для любого интерьера.
+        a.works__button.button(href="catalog.html", data-da=".works__content, 768, last", data-aos="fade-up") Каталог дверей
+      .works__images
+        +worksImage("imgs/works/works--1.png", "", "50")
+        +worksImage("imgs/works/works--2.png", "", "100")
+        +worksImage("imgs/works/works--3.png", "", "150")
+        +worksImage("imgs/works/works--4.png", "", "200")
+    .works__slider
+      h2.title.normal.decor(data-aos="fade-up") Наши работы
+      .works__slider-content
+        .works__slider-slides
+          .works__slider-slide
+            img.works__slider-image.pc(src="imgs/works/works__slider-image--1.png", alt="", data-aos="fade-up")
+            img.works__slider-image.mobile(src="imgs/works/mobile/works__slider-image--1.png", alt="", data-aos="fade-up")
+          .works__slider-slide
+            img.works__slider-image.pc(src="imgs/works/works__slider-image--2.png", alt="", data-aos="fade-up")
+            img.works__slider-image.mobile(src="imgs/works/mobile/works__slider-image--2.png", alt="", data-aos="fade-up")
+          .works__slider-slide
+            img.works__slider-image.pc(src="imgs/works/works__slider-image--3.png", alt="", data-aos="fade-up")
+            img.works__slider-image.mobile(src="imgs/works/mobile/works__slider-image--3.png", alt="", data-aos="fade-up")
+          .works__slider-slide
+            img.works__slider-image.pc(src="imgs/works/works__slider-image--4.png", alt="", data-aos="fade-up")
+            img.works__slider-image.mobile(src="imgs/works/mobile/works__slider-image--4.png", alt="", data-aos="fade-up")
+        menu.works__slider-menu
+          li(data-aos="fade-up", data-aos-delay="100")
+            button.works__slider-button.prev(type="button", data-tippy-content="Предыдущие изображения")
+              span.icon-arrow-left
+          li(data-aos="fade-up", data-aos-delay="200")
+            button.works__slider-button.next(type="button", data-tippy-content="Следующие изображения")
+              span.icon-arrow-right

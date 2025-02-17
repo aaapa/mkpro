@@ -1,0 +1,22 @@
+mixin benefitCard(title, text, delay = "200")
+  .benefits__counters-card(data-aos="fade-up", data-aos-delay=delay)
+    h6.benefits__counters-card-title.title(data-aos="fade-up") #{title}
+    p.benefits__counters-card-text(data-aos="fade-up") #{text}
+
+section.benefits
+  .benefits__body.container
+    h2.title.normal.decor(data-aos="fade-up", data-aos-delay="100") Почему мы
+    .benefits__content
+      img.benefits__content-image(src="imgs/benefits/benefits--1.png", alt="", data-aos="fade-up", data-aos-delay="100")
+      .benefits__counters
+        .benefits__counters-top
+          +benefitCard("10000+", "дверей изготовлено", "100")
+          +benefitCard("50+", "постоянных клиентов", "300")
+          +benefitCard("100+", "опытных специалистов", "500")
+        span.benefits__desc(data-aos="fade-up", data-aos-delay="100")
+          | В МКПро мы понимаем, что двери
+          | — это не просто функциональные элементы интерьера,
+          | а важная часть вашего дома, отражающая
+          | ваш стиль и индивидуальность. Наша компания
+          | занимается производством межкомнатных дверей, предлагая широкий
+          | ассортимент моделей, которые подойдут для любого интерьера.

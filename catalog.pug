@@ -1,0 +1,7 @@
+.wrapper
+  include src/components/header/header.pug
+  main.main
+    include src/components/current-page/current-page.pug
+    +currentPage("imgs/current-page/catalog.png", "Каталог")
+    include src/blocks/catalog/catalog.pug
+  include src/components/footer/footer.pug

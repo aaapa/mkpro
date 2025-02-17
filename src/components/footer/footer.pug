@@ -1,0 +1,28 @@
+mixin footerLink(href, text)
+  li
+    a.footer__link(href=href, data-aos="fade-up", data-aos-delay="100") #{text}
+
+footer.footer
+  .footer__body.container
+    .footer__top
+      a.footer__logo(href="index.html")
+        img.footer__logo-image(src="imgs/logo/logo--black.svg", alt="МКПро")
+      .footer__section
+        h6.footer__title(data-aos="fade-up", data-aos-delay="100") Разделы
+        nav.footer__nav
+          ul.footer__list
+            +footerLink("index.html#about", "О фабрике")
+            +footerLink("catalog.html", "Каталог")
+            +footerLink("contacts.html", "Контакты")
+      address.footer__section
+        h6.footer__title(data-aos="fade-up", data-aos-delay="100") Контакты
+        span(data-aos="fade-up", data-aos-delay="100") 601241, Владимирская область, Собинский район, д. Демидово, <br> дом 4Б, корпус 2, литер А2, офис 4
+        a.footer__link(href="tel:+79066111333", data-aos="fade-up", data-aos-delay="100") +7 (906) 611-13-33
+        include ../../blocks/socials/socials.pug
+        +socials([
+          { name: "WhatsApp", href: "https://wa.me/+79066111333", icon: "whatsapp" },
+          { name: "Telegram", href: "https://t.me/tmarinasoboleva", icon: "telegram" }
+        ])
+    .footer__bottom
+      .footer__copyright
+        span ©2024. Все права защищены

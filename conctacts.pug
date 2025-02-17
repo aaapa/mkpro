@@ -1,0 +1,37 @@
+.wrapper
+  include src/components/header/header.pug
+  main.main
+    include src/components/current-page/current-page.pug
+    +currentPage("imgs/current-page/contacts.png", "Контакты")
+    section.contacts.page
+      .contacts__body.container
+        h2.title.normal.decor Контакты
+        .contacts__content
+          .contacts__content-main
+            .contacts__info
+              .contacts__info-row
+                span.contacts__info-icon.icon-gps
+                .contacts__info-column
+                  h6.contacts__info-title Адрес:
+                    span.contacts__info-title-mark 601241, Владимирская область, Собинский район, д. Демидово,
+                  span дом 4Б, корпус 2, литер А2, офис 4
+              .contacts__info-row.phone
+                span.contacts__info-icon.icon-phone
+                .contacts__info-column
+                  h6.contacts__info-title Телефон:
+                  a.contacts__link(href="tel:+79066111333") +7 (906) 611-13-33
+              .contacts__info-row
+                span.contacts__info-icon.icon-email
+                .contacts__info-column
+                  h6.contacts__info-title Email:
+                  a.contacts__link(href="mailto:mkpro33@mail.ru") mkpro33@mail.ru
+            .contacts__content-bottom
+              button.button(type="button", data-feedback-button)
+                span Обратный звонок
+              include src/blocks/socials/socials.pug
+              +socials([
+                { name: "WhatsApp", href: "https://wa.me/+79066111333", icon: "whatsapp" },
+              ])
+          .contacts__map
+            iframe.contacts__map-iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a405ea9c20dee48ce1c70c2f18a378745fd2dfa4cb8f5e9e219f3e9f942d012&amp;source=constructor", frameborder="0")
+  include src/components/footer/footer.pug

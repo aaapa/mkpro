@@ -1,0 +1,20 @@
+@mixin opacity {
+  opacity: $opacity;
+}
+
+@mixin scale {
+  scale: $scale;
+}
+
+@mixin hover-image {
+  @media (hover:hover) {
+    &:hover {
+      scale: 1.1;
+      border-radius: 0px;
+    }
+  }
+}
+
+@mixin transition {
+  transition: all 0.15s ease-out !important;
+}

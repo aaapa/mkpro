@@ -1,0 +1,43 @@
+.title {
+  color: black;
+  font-family: "Gilroy-Medium";
+  font-size: clamp(2.1875rem, 5vw, 3.75rem);
+
+  &.normal {
+    font-size: clamp(1.5rem, 5vw, 2.1875rem);
+  }
+
+  &.decor {
+    position: relative;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      display: inline-block;
+      translate: 3px 8px;
+      background-color: black;
+    }
+
+    &::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      right: -4px;
+      bottom: -12px;
+      rotate: -45deg;
+      display: inline-block;
+      border-right: 2px solid black;
+      border-bottom: 2px solid black;
+    }
+  }
+
+  &.white {
+    color: white;
+  }
+}

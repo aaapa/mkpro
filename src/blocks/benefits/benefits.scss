@@ -1,0 +1,156 @@
+.benefits {
+  width: 100%;
+  padding: 90px $padding 0px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  & * {
+    z-index: 2;
+  }
+
+  &::before {
+    content: "";
+    width: 350px;
+    height: 362px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 2;
+    display: inline-block;
+    background: url("imgs/decor/decor--1.svg") center / cover no-repeat;
+  }
+
+  &::after {
+    content: "";
+    width: 350px;
+    height: 362px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+    display: inline-block;
+    background: url("imgs/decor/decor--2.svg") center / cover no-repeat;
+  }
+
+  &__body {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  &__content {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    gap: 50px;
+    align-items: start;
+    justify-content: space-between;
+
+    &-image {
+      width: 485px;
+      height: 325px;
+      object-fit: cover;
+      border-radius: 0px 75px;
+      transition: all 0.15s ease-out !important;
+
+      @include hover-image;
+    }
+  }
+
+  &__counters {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+
+    &-top {
+      display: flex;
+      gap: 20px;
+    }
+
+    &-cards {
+      width: 100%;
+      display: flex;
+    }
+
+    &-card {
+      width: 100%;
+      max-width: 200px;
+      min-height: 115px;
+      padding: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid #c4c4c4;
+
+      &-title {
+        color: $accentColor;
+        font-size: clamp(1.125rem, 5vw, 2.75rem);
+      }
+
+      &-text {
+        max-width: 100px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__desc {
+    max-width: 665px;
+    font-size: clamp(1rem, 5vw, 1.125rem);
+  }
+
+  @media (max-width: 1085px) {
+    & {
+      padding: 50px $padding 0px;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &__content {
+      gap: 15px;
+      flex-direction: column;
+
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &__counters-top {
+      gap: 10px;
+    }
+
+    &__counters-card {
+      max-width: none;
+      padding: 10px;
+
+      &-text {
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  @media (max-width: 785px) {
+    &__content-image {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 380px) {
+    &__counters-card-title {
+      font-size: 0.813rem;
+    }
+
+    &__counters-card-text {
+      font-size: 0.75rem;
+    }
+  }
+}

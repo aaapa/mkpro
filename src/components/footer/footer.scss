@@ -1,0 +1,129 @@
+.footer {
+  color: black;
+  width: 100%;
+  padding: 40px $padding 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #F6F8FA;
+
+  &__body {
+    width: 100%;
+    display: flex;
+    gap: 65px;
+    flex-direction: column;
+  }
+
+  &__top {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: start;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: inline-block;
+
+    @media (hover:hover) {
+      &:hover {
+        @include opacity;
+      }
+    }
+
+    &:active {
+      @include scale;
+    }
+
+    &-image {
+      object-fit: cover;
+    }
+  }
+
+  &__section {
+    display: flex;
+    gap: 20px;
+    align-items: start;
+    flex-direction: column;
+    font-style: normal;
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    font-family: "Gilroy-Semibold";
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  &__link {
+    color: #1F1F1F;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 1px;
+      opacity: 0;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      display: inline-block;
+      background-color: currentColor;
+      transform-origin: center left;
+      transition: transform 250ms, opacity 250ms;
+      transform: translateY(3px) scaleY(0);
+    }
+
+    @media (hover:hover) {
+      &:hover {
+        color: $accentColor;
+
+        &::before {
+          opacity: 1;
+          transform: translateY(1px) scaleY(1);
+        }
+      }
+    }
+
+    &:active {
+      @include scale;
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  &__copyright {
+    color: #63665F;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    &__body {
+      gap: 40px;
+    }
+
+    &__top {
+      flex-direction: column;
+    }
+  }
+}

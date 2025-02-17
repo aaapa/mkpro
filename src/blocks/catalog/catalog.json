@@ -1,0 +1,395 @@
+[
+    {
+        "name": "Дверь глухая",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_Q-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_Q-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_Q.webp"
+            }
+        ],
+        "series": "Дверь глухая",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 1",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_A-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_A-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_A.webp"
+            }
+        ],
+        "series": "Line 1",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 2",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_B-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_B-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_B.webp"
+            }
+        ],
+        "series": "Line 2",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 3",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_C-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_C-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_C.webp"
+            }
+        ],
+        "series": "Line 3",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 4",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_1-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_1-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_1.webp"
+            }
+        ],
+        "series": "Line 4",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 5-1",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_F-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_F-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_F.webp"
+            }
+        ],
+        "series": "Line 5-1",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 5-2",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_E-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_E-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_E.webp"
+            }
+        ],
+        "series": "Line 5-2",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 6",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_D-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_D-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_D.webp"
+            }
+        ],
+        "series": "Line 6",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 7",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_G-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_G-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_G.webp"
+            }
+        ],
+        "series": "Line 7",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 8-1",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_H-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_H-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_H.webp"
+            }
+        ],
+        "series": "Line 8-1",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 8-2",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_I-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_I-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_I.webp"
+            }
+        ],
+        "series": "Line 8-2",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 9-3",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_J-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_J-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_J.webp"
+            }
+        ],
+        "series": "Line 9-3",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 9-2",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_K-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_K-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_K.webp"
+            }
+        ],
+        "series": "Line 9-2",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 9-1",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_L-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_L-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_L.webp"
+            }
+        ],
+        "series": "Line 9-1",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 9-4",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_M-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_M-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_M.webp"
+            }
+        ],
+        "series": "Line 9-4",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Line 10",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_P-белый.webp"
+            },
+            {
+                "name": "chocolate",
+                "image": "src/imgs/catalog/Дверь_P-шоколадный.webp"
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_P.webp"
+            }
+        ],
+        "series": "Line 10",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    },
+    {
+        "name": "Высокий глянец",
+        "colors": [
+            {
+                "name": "white",
+                "image": "src/imgs/catalog/Дверь_N-белый.webp"
+            },
+            {
+                "name": "black",
+                "image": "src/imgs/catalog/Дверь_N.webp",
+                "default": true
+            },
+            {
+                "name": "default",
+                "image": "src/imgs/catalog/Дверь_N.webp",
+                "show": false
+            }
+        ],
+        "series": "Высокий глянец",
+        "height": 2000,
+        "thickness": "38 мм",
+        "coating": "ПЭТ",
+        "style": "Модерн",
+        "sizes": "600/700/800/900x2000"
+    }
+]

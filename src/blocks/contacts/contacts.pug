@@ -1,0 +1,26 @@
+section.contacts
+  .contacts__body.container
+    h2.title.normal.decor(data-aos="fade-up", data-aos-delay="100") Контакты
+    .contacts__content
+      .contacts__content-main
+        .contacts__info
+          .contacts__info-row
+            span.contacts__info-icon.icon-gps(data-aos="fade-up", data-aos-delay="100")
+            .contacts__info-column
+              h6.contacts__info-title(data-aos="fade-up", data-aos-delay="100") Адрес:
+                span.contacts__info-title-mark(data-aos="fade-up", data-aos-delay="100") 601241, Владимирская область, Собинский район, д. Демидово,
+              span(data-aos="fade-up", data-aos-delay="100") дом 4Б, корпус 2, литер А2, офис 4
+          .contacts__info-row.phone
+            span.contacts__info-icon.icon-phone(data-aos="fade-up", data-aos-delay="100")
+            .contacts__info-column
+              h6.contacts__info-title(data-aos="fade-up", data-aos-delay="100") Телефон:
+              a.contacts__link(href="tel:+79066111333", data-aos="fade-up", data-aos-delay="100") +7 (906) 611-13-33
+        .contacts__content-bottom
+          button.contacts__button.button(type="button", data-feedback-button, data-aos="fade-up", data-aos-delay="100")
+            span Обратный звонок
+          include ../socials/socials.pug
+          +socials([
+            { name: "WhatsApp", href: "https://wa.me/+79066111333", icon: "whatsapp" }
+          ])
+      .contacts__map(data-aos="fade-up", data-aos-delay="100")
+        iframe.contacts__map-iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a405ea9c20dee48ce1c70c2f18a378745fd2dfa4cb8f5e9e219f3e9f942d012&amp;source=constructor", frameborder="0")

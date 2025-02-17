@@ -1,0 +1,45 @@
+mixin menuItem(href, text)
+  li.header__list-item
+    a.header__link(href=href) #{text}
+
+mixin socialLink(href, iconClass, title)
+  li
+    a.header__socials-link(href=href, data-tippy-content=title)
+      span(class=iconClass)
+
+header.header.index
+  .header__body.container
+    a.header__logo(href="index.html")
+      img.header__logo-image.default(src="imgs/logo/logo.svg", alt="МКПро")
+      img.header__logo-image.open(src="imgs/logo/logo--black.svg", alt="МКПро")
+    .header__menu
+      .header__address
+        .header__address-row.gps
+          span.header__address-icon.icon-gps
+          .header__address-column
+            h6.header__address-title Адрес: 
+              span.header__address-title-mark 601241, Владимирская область, <br> Собинский район, д. Демидово,
+            span дом 4Б, корпус 2, литер А2, офис 4
+        .header__address-row.phone
+          span.header__address-icon.icon-phone
+          .header__address-column
+            h6.header__address-title Телефон: 
+            a.header__link.normal(href="tel:+79066111333") +7 (906) 611-13-33
+      button.header__menu-button(type="button", aria-expanded="false", aria-label="Нажмите, чтобы открыть навигационное меню")
+        span.header__menu-icon
+      .header__menu-content
+        .header__menu-top 
+          h2.header__menu-title Меню
+        nav.header__nav
+          ul.header__list
+            +menuItem("index.html", "Главная")
+            +menuItem("catalog.html", "Каталог")
+            +menuItem("index.html#about", "О фабрике")
+            +menuItem("index.html#works", "Наши работы")
+            +menuItem("contacts.html", "Контакты")
+        .header__bottom
+          include ../../blocks/socials/socials.pug
+          +socials([
+            { name: "WhatsApp", href: "https://wa.me/+79066111333", icon: "whatsapp" },
+            { name: "Telegram", href: "https://t.me/tmarinasoboleva", icon: "telegram" }
+          ])

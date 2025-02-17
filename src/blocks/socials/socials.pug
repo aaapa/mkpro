@@ -1,0 +1,8 @@
+mixin socials(links, additionalClass = "")
+  .socials(class=additionalClass)
+    nav.socials__nav
+      ul.socials__list
+        each link in links
+          li.socials__item
+            a.socials__link(href=link.href, data-tippy-content=link.name)
+              img.socials__icon(src=link.src, alt=link.name)
